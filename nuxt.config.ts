@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   // Base URL para GitHub Pages
   app: {
-    baseURL: '/docs/'
+    baseURL: '/'
   },
   nitro: {
     prerender: {
