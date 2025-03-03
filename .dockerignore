@@ -1,0 +1,9 @@
+# Ejemplo de .dockerignore
+node_modules
+.git
+.next
+dist
+.nuxt
+.cache
+.env
+*.md
