@@ -1,14 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-  // Desactivar SSR y habilitar Static Site Generation
-  ssr: false,
+  ssr: true,
 
-  // Base URL para GitHub Pages (cambia "mi-repo" por el nombre de tu repositorio)
+  // Base URL para GitHub Pages
   app: {
-    baseURL: '/mi-repo/'
+    baseURL: '/docs/'
   },
   nitro: {
     prerender: {
