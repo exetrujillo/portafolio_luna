@@ -1,0 +1,1 @@
+import{_ as s,c,a as o,o as t}from"./BeXbHQnc.js";const a={},r={class:"projects-page"};function n(d,e){return t(),c("div",r,e[0]||(e[0]=[o("h1",null,"Proyectos",-1),o("p",null,"Galería de proyectos de Luna Jadue.",-1)]))}const l=s(a,[["render",n],["__scopeId","data-v-c6c17d62"]]);export{l as default};

@@ -22,15 +22,11 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue';
 
-const baseUrl = process.env.NODE_ENV === 'production' 
-  ? '/portafolio_luna/' 
-  : '/';
-
 const images = [
-  `${baseUrl}images/placeholder-image.jpg`,
-  `${baseUrl}images/placeholder-image2.jpg`,
-  `${baseUrl}images/placeholder-image3.jpg`,
-  `${baseUrl}images/placeholder-image4.jpg`
+  `/images/placeholder-image.jpg`,
+  `/images/placeholder-image2.jpg`,
+  `/images/placeholder-image3.jpg`,
+  `/images/placeholder-image4.jpg`
 ];
 
 // Variables reactivas para controlar las imágenes y las animaciones

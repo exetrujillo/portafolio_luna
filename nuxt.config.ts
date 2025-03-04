@@ -8,7 +8,7 @@ export default defineNuxtConfig({
 
   // Base URL para GitHub Pages
   app: {
-    baseURL: '/portafolio_luna/',  // Esto es válido para la base URL en la sección app
+    baseURL: '/portafolio_luna/docs/',  // Esto es válido para la base URL en la sección app
   },
 
   // Configuración de los módulos (ahora todos se agregan aquí)
@@ -24,7 +24,7 @@ export default defineNuxtConfig({
 
   vite: {
     // Aquí se usa la propiedad `base` en lugar de `publicPath`
-    base: '/portafolio_luna/', // Ruta base para todos los recursos estáticos
+    base: '/portafolio_luna/docs/', // Ruta base para todos los recursos estáticos
     build: {
       assetsDir: '_nuxt', // Establece la carpeta de los activos generados
     }
