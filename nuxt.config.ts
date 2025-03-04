@@ -4,39 +4,38 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
-  ssr: true,
+  // Importante: para GitHub Pages, necesitamos generar estático (no SSR)
+  ssr: false,
 
   // Base URL para GitHub Pages
   app: {
-    baseURL: '/portafolio_luna/docs/',  // Esto es válido para la base URL en la sección app
-    buildAssetsDir: '/_nuxt/' // Asegura que los assets estén en una carpeta con este prefijo
+    baseURL: '/portafolio_luna/', // Cambiado a solo /portafolio_luna/ sin /docs/
+    buildAssetsDir: '/_nuxt/',
+    head: {
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/portafolio_luna/favicon.ico' }
+      ]
+    }
+  },
+
+  // Exponer la configuración al cliente
+  runtimeConfig: {
+    public: {
+      baseUrl: '/portafolio_luna/' // Sin /docs/ para simplificar
+    }
   },
 
   // Configuración de los módulos
-  modules: [
-    // Aquí incluir módulos
-  ],
+  modules: [],
 
-  build: {
-    transpile: [],
-  },
-
+  // Configura Vite para usar la misma ruta base
   vite: {
-    base: '/portafolio_luna/docs/', // Ruta base para todos los recursos estáticos
+    base: '/portafolio_luna/', // Mismo valor que en app.baseURL
   },
 
+  // Configuración para generar un sitio estático completo
   nitro: {
-    prerender: {
-      routes: ['/'] // Renderiza la página de inicio
-    }
-  },
-
-  // Exponer la configuración al cliente para acceder a app.baseURL
-  runtimeConfig: {
-    public: {
-      app: {
-        baseURL: '/portafolio_luna/docs/'
-      }
-    }
+    preset: 'github-pages',
+    // No necesitamos prerender rutas específicas con preset github-pages
   }
 })

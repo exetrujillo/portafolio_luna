@@ -1,1 +1,0 @@
-import{_ as c,c as t,a,o as e}from"./DDA-bnVv.js";const n={},r={class:"contact-page"};function s(_,o){return e(),t("div",r,o[0]||(o[0]=[a("h1",null,"Contacto",-1),a("p",null,"Información de contacto y formulario para comunicarse con Luna Jadue.",-1)]))}const f=c(n,[["render",s],["__scopeId","data-v-351f8f96"]]);export{f as default};
