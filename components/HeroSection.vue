@@ -20,14 +20,20 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
+import { useRuntimeConfig } from 'nuxt/app';
 
-const images = [
-  `/images/placeholder-image.jpg`,
-  `/images/placeholder-image2.jpg`,
-  `/images/placeholder-image3.jpg`,
-  `/images/placeholder-image4.jpg`
-];
+// Obtener la base URL de la configuración
+const config = useRuntimeConfig();
+const baseURL = config.app.baseURL || '/';
+
+// Utilizamos computed para construir rutas completas con la base URL
+const images = computed(() => [
+  `${baseURL}images/placeholder-image.jpg`,
+  `${baseURL}images/placeholder-image2.jpg`,
+  `${baseURL}images/placeholder-image3.jpg`,
+  `${baseURL}images/placeholder-image4.jpg`
+]);
 
 // Variables reactivas para controlar las imágenes y las animaciones
 const activeIndex = ref(0);
@@ -64,7 +70,7 @@ const changeImage = () => {
   opacity.value = 0;
   
   // Establecer la nueva imagen activa
-  activeIndex.value = (activeIndex.value + 1) % images.length;
+  activeIndex.value = (activeIndex.value + 1) % images.value.length;
   
   // Iniciar la animación
   const duration = 1000; // 1 segundo

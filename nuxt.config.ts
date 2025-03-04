@@ -9,30 +9,34 @@ export default defineNuxtConfig({
   // Base URL para GitHub Pages
   app: {
     baseURL: '/portafolio_luna/docs/',  // Esto es válido para la base URL en la sección app
+    buildAssetsDir: '/_nuxt/' // Asegura que los assets estén en una carpeta con este prefijo
   },
 
-  // Configuración de los módulos (ahora todos se agregan aquí)
+  // Configuración de los módulos
   modules: [
     // Aquí incluir módulos
-  
   ],
 
   build: {
-    // Aquí puedes dejar configuraciones específicas de build como transpile
     transpile: [],
   },
 
   vite: {
-    // Aquí se usa la propiedad `base` en lugar de `publicPath`
     base: '/portafolio_luna/docs/', // Ruta base para todos los recursos estáticos
-    build: {
-      assetsDir: '_nuxt', // Establece la carpeta de los activos generados
-    }
   },
 
   nitro: {
     prerender: {
       routes: ['/'] // Renderiza la página de inicio
+    }
+  },
+
+  // Exponer la configuración al cliente para acceder a app.baseURL
+  runtimeConfig: {
+    public: {
+      app: {
+        baseURL: '/portafolio_luna/docs/'
+      }
     }
   }
 })

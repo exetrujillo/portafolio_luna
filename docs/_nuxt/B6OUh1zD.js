@@ -1,0 +1,1 @@
+import{_ as t,c as s,a as e,o as c}from"./DDA-bnVv.js";const o={},n={class:"about-page"};function r(d,a){return c(),s("div",n,a[0]||(a[0]=[e("h1",null,"Acerca de Luna Jadue",-1),e("p",null,"Información detallada sobre Luna Jadue, su trayectoria y su visión artística.",-1)]))}const l=t(o,[["render",r],["__scopeId","data-v-a3c0d53c"]]);export{l as default};
